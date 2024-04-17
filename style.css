@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-  background-color: #a21beb;
+  background-color: #cda6e2;
   height: 80px;
   position: fixed;
   width: 100%;
@@ -26,7 +26,7 @@ body {
 }
 
 .nav-link {
-  color: white;
+  color: rgb(196, 53, 53);
   text-decoration: none;
 }
 
@@ -58,6 +58,76 @@ body {
 
 .nav-menu-link:hover
 {
-  background-color: #034574;
+  background-color: #2d9ceb;
   transition: 0.5s;
+}
+
+/*estilo de la bara de nav*/
+.nav-toggle {
+
+  color: rgb(117, 117, 194);
+  background: none;
+  border: none;
+  font-size: 30px;
+  padding: 0 20px;
+  line-height: 60px;
+  cursor: pointer;
+
+  display: none; /*Este display es para que oculte la barra*/
+}
+
+/*es para que todos ñas secciones de la barra de navegacion esten dentro de la barrita*/
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 25px;
+    padding: 0 20px;
+    line-height: 60px;
+  }
+
+  .nav-menu {
+    flex-direction: column; /*para que el menu salga hacia abajo*/
+    align-items: center; /*centra todo*/
+    margin-right: 20px;
+    background-color: #2b6bac;
+    position: fixed; /*posicion fija*/
+    top: 60px; /*arriba*/
+    width: 100%; /*ancho*/
+    padding: 20px 0; /*espacio entre ellos*/
+
+    height: calc(100% - 60px); /*juega con el espacio*/
+    overflow-y: auto; 
+
+    left: 10000%;
+    transition: left 0.3s; /*se movera 0.3s*/
+  }
+/*cuando se pase el mouse por ahi*/
+  .nav-menu-item {
+    line-height: 70px;
+  }
+
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+    background: none;
+    color: #ed0a78;
+  }
+
+  .nav-toggle {
+    display: block; /*sale hacia abajo*/
+  }
+
+  .nav-menu_visible {
+    left: 0; /*con este se puede hacer si va a estar visible o invisible*/
+  }
+
+  .nav-toggle:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
